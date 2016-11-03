@@ -1,0 +1,28 @@
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <script src="../lib/game.js"></script>
+        <script src="../lib/camera.js"></script>
+        <script src="../lib/behavior.js"></script>
+        <script src="../lib/object.js"></script>
+        <script src="../lib/body.js"></script>
+        <script src="../lib/position.js"></script>
+    </header>
+    
+    <style>
+        #game
+        {
+            width: 300;
+            height: 200;
+            border: 1px solid black;
+        }
+    </style>
+    
+    <body>
+        <canvas id="game"></canvas>
+    </body>
+    
+    <script>
+        new Game(document.getElementById("game"))
+    </script>
+</html>
