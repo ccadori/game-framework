@@ -6,35 +6,32 @@
         <script src="../lib/Behavior.js"></script>
         <script src="../lib/Object.js"></script>
         <script src="../lib/Body.js"></script>
-        <script src="../lib/Position.js"></script>
         <script src="../lib/Color.js"></script>
+        <script src="../lib/Position.js"></script>
+        <script src="../lib/Render.js"></script>
     </header>
     
     <style>
         #game
         {
-            width: 300;
-            height: 200;
-            border: 1px solid black;
+            border: 1px solid lightgrey;
         }
     </style>
     
     <body>
-        <canvas id="game"></canvas>
+        <canvas id="game" width="300" height="300"></canvas>
     </body>
     
     <script>
-        // creating a Game
-        let game = new Game(document.getElementById("game"), 300, 200)
-        
-        // creating an Object
-        let myObject = new Object(new Body(1, new Position(0,0,0), new Color("red", 10, 10)))
-        // adding a behavior to our object
-        myObject.addBehavior(new Behavior())
-
-        // adding the object to the game
-        game.addObject(myObject)
-        // starting
-        game.start()
+        // Setting Camera 
+        Camera.setCanvas(document.getElementById("game"), new Position(0,0,0))
+        // Creating an object
+        let myObject = new Object(new Position(0,0,0), 1, new Render("rect", "green", 50, 50))
+        // Adding a behavior
+        myObject.addBehavior(new Behavior)
+        // Adding the object to the game
+        Game.addObject(myObject)
+        // Starting the game
+        Game.start()
     </script>
 </html>
