@@ -25,10 +25,10 @@
     
     <script>
         // creating a Game
-        let game = new Game(document.getElementById("game"))
+        let game = new Game(document.getElementById("game"), 300, 200)
         
         // creating an Object
-        let myObject = new Object(new Body(1, new Position(0,0,0), new Image()))
+        let myObject = new Object(new Body(1, new Position(0,0,0), new Color("red", 10, 10)))
         // adding a behavior to our object
         myObject.addBehavior(new Behavior())
 
