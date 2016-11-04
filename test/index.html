@@ -1,12 +1,13 @@
 <html>
     <header>
         <meta charset="UTF-8">
-        <script src="../lib/game.js"></script>
-        <script src="../lib/camera.js"></script>
-        <script src="../lib/behavior.js"></script>
-        <script src="../lib/object.js"></script>
-        <script src="../lib/body.js"></script>
-        <script src="../lib/position.js"></script>
+        <script src="../lib/Game.js"></script>
+        <script src="../lib/Camera.js"></script>
+        <script src="../lib/Behavior.js"></script>
+        <script src="../lib/Object.js"></script>
+        <script src="../lib/Body.js"></script>
+        <script src="../lib/Position.js"></script>
+        <script src="../lib/Color.js"></script>
     </header>
     
     <style>
@@ -23,6 +24,17 @@
     </body>
     
     <script>
-        new Game(document.getElementById("game"))
+        // creating a Game
+        let game = new Game(document.getElementById("game"))
+        
+        // creating an Object
+        let myObject = new Object(new Body(1, new Position(0,0,0), new Image()))
+        // adding a behavior to our object
+        myObject.addBehavior(new Behavior())
+
+        // adding the object to the game
+        game.addObject(myObject)
+        // starting
+        game.start()
     </script>
 </html>
