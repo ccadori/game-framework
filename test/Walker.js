@@ -19,5 +19,7 @@ class Walker extends Behavior
 
         if (Input.isPressed(Input.keyCode.leftArrow))
             this.object.position.move(-this.velocity * deltaTime,0)
+
+        Camera.position.moveTo(this.object.position.x, this.object.position.y)
     }
 }
