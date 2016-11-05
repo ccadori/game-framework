@@ -1,6 +1,7 @@
 <html>
     <header>
         <meta charset="UTF-8">
+        <!--Core-->
         <script src="../lib/Game.js"></script>
         <script src="../lib/Camera.js"></script>
         <script src="../lib/Behavior.js"></script>
@@ -9,6 +10,7 @@
         <script src="../lib/Color.js"></script>
         <script src="../lib/Position.js"></script>
         <script src="../lib/Render.js"></script>
+        <script src="../lib/Input.js"></script>
     </header>
     
     <style>
@@ -21,14 +23,15 @@
     <body>
         <canvas id="game" width="300" height="300"></canvas>
     </body>
-    
+
+    <script src="./Walker.js"></script>
     <script>
         // Setting Camera 
         Camera.setCanvas(document.getElementById("game"), new Position(0,0,0))
         // Creating an object
         let myObject = new Object(new Position(0,0,0), 1, new Render("rect", "green", 50, 50))
         // Adding a behavior
-        myObject.addBehavior(new Behavior)
+        myObject.addBehavior(new Walker(100))
         // Adding the object to the game
         Game.addObject(myObject)
         // Starting the game
