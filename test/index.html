@@ -11,6 +11,7 @@
         <script src="../lib/Position.js"></script>
         <script src="../lib/Render.js"></script>
         <script src="../lib/Input.js"></script>
+        <script src="../lib/KeyCode.js"></script>
     </header>
     
     <style>
@@ -25,14 +26,16 @@
     </body>
 
     <script src="./Walker.js"></script>
+    <script src="./Scaler.js"></script>
     <script>
-        // Setting Camera 
+        // Setting Camera
         Camera.setCanvas(document.getElementById("game"), new Position(0,0))
         // Creating an object
-        let myObject = new Object(new Position(0,0), 1, new Render("rect", "green", 50, 50))
-        let myEnemy = new Object(new Position(100, 250), 1, new Render("rect", "red", 50, 50))
+        let myObject = new Object(new Position(0,0), 1, new Render("rect", "green", 50, 50), 0.5, 0.5)
+        let myEnemy = new Object(new Position(70, 80), 1, new Render("rect", "red", 50, 50), 0.5, 0.5)
         // Adding a behavior
         myObject.addBehavior(new Walker(100))
+        myObject.addBehavior(new Scaler(1))
         // Adding the object to the game
         Game.addObject(myObject)
         Game.addObject(myEnemy)
