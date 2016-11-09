@@ -1,4 +1,4 @@
-class Scaler extends Behavior
+class Scaler extends Component
 {
     constructor(velocity)
     {

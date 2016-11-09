@@ -1,25 +1,27 @@
-class Walker extends Behavior
+class Walker extends Component
 {
-    constructor(velocity)
+    constructor(velocity, camera)
     {
         super()
         this.velocity = velocity
+        this.camera = camera
     }
 
     update(deltaTime)
     {
         if (Input.isPressed(KeyCode.downarrow))
-            this.object.position.move(0,this.velocity * deltaTime)
+            this.object.body.position.y += this.velocity * deltaTime
         
         if (Input.isPressed(KeyCode.uparrow))
-            this.object.position.move(0,-this.velocity * deltaTime)
+            this.object.body.position.y -= this.velocity * deltaTime
 
         if (Input.isPressed(KeyCode.rightarrow))
-            this.object.position.move(this.velocity * deltaTime,0)
+            this.object.body.position.x += this.velocity * deltaTime
 
         if (Input.isPressed(KeyCode.leftarrow))
-            this.object.position.move(-this.velocity * deltaTime,0)
+            this.object.body.position.x -= this.velocity * deltaTime
 
-        Camera.position.moveTo(this.object.position.x, this.object.position.y)
+        this.camera.body.position.x = this.object.body.position.x 
+        this.camera.body.position.y = this.object.body.position.y
     }
 }
