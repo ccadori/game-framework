@@ -9,8 +9,14 @@ class Scaler extends Component
     update(deltaTime)
     {
         if (Input.isPressed(KeyCode.space))
-            this.object.scale += (this.velocity * deltaTime)
-        else if (this.object.scale >= 1)
-            this.object.scale -= (this.velocity * deltaTime)
+        {
+            this.object.body.scale.x += (this.velocity * deltaTime)
+            this.object.body.scale.y += (this.velocity * deltaTime)
+        }
+        else if (this.object.body.scale.x >= 1)
+        {
+            this.object.body.scale.x -= (this.velocity * deltaTime)
+            this.object.body.scale.y -= (this.velocity * deltaTime)
+        }
     }
 }

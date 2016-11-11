@@ -28,19 +28,23 @@
     <script src="./Walker.js"></script>
     <script src="./Scaler.js"></script>
     <script>
-        //Creating our objects
+        // Creating our objects
         let myPlayer = new Object(0,0,2,1,1,.5,.5, new Render("rect", "green", 25, 25))
+        let myGun = new Object(12.5,25,5,1,1,.5,.5, new Render("rect", "black", 10, 10))
         let myEnemy = new Object(70,80,1,1,1,.5,.5, new Render("rect", "red", 25, 25))
         let myCamera = new Object(0,0,10)
         
-        //Adding components
+        // Puting the gun on they player hand
+        myGun.body.parent = myPlayer.body
+
+        // Adding components
         myPlayer.addComponent(new Walker(100, myCamera))
-        myPlayer.addComponent(new Scaler(1))
+        myPlayer.addComponent(new Scaler(2))
         myCamera.addComponent(new Camera(document.getElementById("game")))
 
-        //Adding the objects to the scene
-        Game.addObject([myPlayer, myEnemy, myCamera])
-        //Setting camera and starting the game
+        // Adding the objects to the scene
+        Game.addObject([myPlayer, myEnemy, myCamera, myGun])
+        // Setting camera and starting the game
         Game.setCamera(myCamera.getComponent(Camera)).start()
     </script>
 </html>
