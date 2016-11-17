@@ -1,17 +1,11 @@
 <html>
     <header>
         <meta charset="UTF-8">
-        <!--Core-->
-        <script src="../lib/core/Component.js"></script>
-        <script src="../lib/core/Game.js"></script>
-        <script src="../lib/core/Camera.js"></script>
-        <script src="../lib/core/Object.js"></script>
-        <script src="../lib/core/Body.js"></script>
-        <script src="../lib/core/Color.js"></script>
-        <script src="../lib/core/Position.js"></script>
-        <script src="../lib/core/Render.js"></script>
-        <script src="../lib/core/Input.js"></script>
-        <script src="../lib/core/KeyCode.js"></script>
+        <!--Libs-->
+        <script src="../core.js"></script>
+        <!--My components-->
+        <script src="./Walker.js"></script>
+        <script src="./Scaler.js"></script>
     </header>
     
     <style>
@@ -25,8 +19,6 @@
         <canvas id="game" width="800" height="600"></canvas>
     </body>
 
-    <script src="./Walker.js"></script>
-    <script src="./Scaler.js"></script>
     <script>
         // Creating our objects
         let myPlayer = new Object(0,0,2, new Render("rect", "green", 25, 25))
